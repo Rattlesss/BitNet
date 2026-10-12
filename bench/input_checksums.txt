@@ -1,0 +1,12 @@
+date: 2026-10-12T18:34:27Z
+parent: bd8dce8, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'Battery Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: shasum -a 256 models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf /Users/rattles/Code/Bitnet/data/wikitext-2-raw/wiki.test.raw
+-----
+4221b252fdd5fd25e15847adfeb5ee88886506ba50b8a34548374492884c2162  models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf
+4338ef8f37f58f51e37dd65879dbf879123ee156c44f0e574a8460d68f7da88e  models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf
+173c87a53759e0201f33e0ccf978e510c2042d7f2cb78229d9a50d79b9e7dd08  /Users/rattles/Code/Bitnet/data/wikitext-2-raw/wiki.test.raw
