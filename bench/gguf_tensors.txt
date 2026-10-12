@@ -1,0 +1,22 @@
+date: 2026-10-12T18:32:30Z
+parent: 6c3a833, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'Battery Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: python scripts/list_gguf_tensors.py
+-----
+token_embd.weight F16 [2560, 128256] 656670720
+blk.0.attn_norm.weight F32 [2560] 10240
+blk.0.ffn_down.weight I2_S [6912, 2560] 17694720
+blk.0.ffn_sub_norm.weight F32 [6912] 27648
+blk.0.ffn_gate.weight I2_S [2560, 6912] 17694720
+blk.0.ffn_up.weight I2_S [2560, 6912] 17694720
+blk.0.ffn_norm.weight F32 [2560] 10240
+blk.0.attn_sub_norm.weight F32 [2560] 10240
+blk.0.attn_k.weight I2_S [2560, 640] 1638400
+blk.0.attn_output.weight I2_S [2560, 2560] 6553600
+blk.0.attn_q.weight I2_S [2560, 2560] 6553600
+blk.0.attn_v.weight I2_S [2560, 640] 1638400
+output_norm.weight F32 [2560] 10240
