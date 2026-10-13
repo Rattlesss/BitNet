@@ -1,0 +1,46 @@
+sample of one 400-token generation, Q8_0 model, 4 threads, scalar I2_S kernel, submodule 075d752, Oct 12; the window overlapped the end of model loading, so madvise is load time
+Sort by top of stack, same collapsed (when >= 5):
+        __workq_kernreturn  (in libsystem_kernel.dylib)        8042
+        ggml_vec_dot_i2_i8_s  (in libggml-cpu.0.15.3.dylib)        6870
+        __psynch_cvwait  (in libsystem_kernel.dylib)        6743
+        __semwait_signal  (in libsystem_kernel.dylib)        4252
+        ggml_graph_compute_thread  (in libggml-cpu.0.15.3.dylib)        2831
+        kevent_id  (in libsystem_kernel.dylib)        2478
+        mach_msg2_trap  (in libsystem_kernel.dylib)        2470
+        madvise  (in libsystem_kernel.dylib)        1091
+        ggml_gemv_q8_0_4x8_q8_0  (in libggml-cpu.0.15.3.dylib)        889
+        __bzero  (in libsystem_platform.dylib)        104
+        _platform_memmove  (in libsystem_platform.dylib)        99
+        ggml_compute_forward_mul_mat  (in libggml-cpu.0.15.3.dylib)        61
+        repack_q8_0_to_q8_0_4_bl(ggml_tensor*, int, void const*, unsigned long)  (in libggml-cpu.0.15.3.dylib)        52
+        ggml_graph_compute_secondary_thread  (in libggml-cpu.0.15.3.dylib)        18
+        quantize_row_i8_s  (in libggml-cpu.0.15.3.dylib)        17
+        DYLD-STUB$$memcpy  (in libggml-cpu.0.15.3.dylib)        15
+        std::__hash_table<std::__hash_value_type<std::pair<std::basic_string<char>, std::basic_string<char>>, int>>::__emplace_unique_key_args<std::pair<std::basic_string<char>, std::basic_string<char>>, std::pair<std::basic_string<char>, std::basic_string<char>>, int&>(std::pair<std::basic_string<char>, std::basic_string<char>> const&, std::pair<std::basic_string<char>, std::basic_string<char>>&&, int&)  (in libllama.0.0.9922.dylib)        14
+        ggml_compute_forward_rms_norm_mul_fused  (in libggml-cpu.0.15.3.dylib)        13
+        ggml_gemv_i2_i8_s  (in libggml-cpu.0.15.3.dylib)        11
+        DYLD-STUB$$pthread_mutex_lock  (in Foundation)        10
+        ggml_compute_forward_flash_attn_ext_f16_one_chunk(ggml_compute_params const*, ggml_tensor*, int, int, long long, long long, float*, long long)  (in libggml-cpu.0.15.3.dylib)        10
+        _xzm_free  (in libsystem_malloc.dylib)        9
+        <deduplicated_symbol>  (in libllama.0.0.9922.dylib)        8
+        _platform_memset  (in libsystem_platform.dylib)        8
+        llama_vocab::impl::load(llama_model_loader&, LLM_KV const&)  (in libllama.0.0.9922.dylib)        8
+        -[__NSArrayM count]  (in CoreFoundation)        6
+        _platform_memcmp  (in libsystem_platform.dylib)        6
+        std::__put_character_sequence[abi:nqe210106]<char>(std::basic_ostream<char>&, char const*, unsigned long)  (in libllama.0.0.9922.dylib)        6
+        std::basic_streambuf<char>::xsputn(char const*, long)  (in libc++.1.dylib)        6
+    +   !     :       1 <deduplicated_symbol>  (in libllama.0.0.9922.dylib) + 168  [0x102c12a74]
+    +   !     :         1 operator new(unsigned long)  (in libc++abi.dylib) + 52  [0x18abc87e8]
+    +   !     :           1 _xzm_xzone_malloc_tiny  (in libsystem_malloc.dylib) + 116  [0x18aa33f48]
+    +   !     1 llama_context::decode(llama_batch const&)  (in libllama.0.0.9922.dylib) + 2896  [0x102bfca50]
+    +   !       1 _platform_memmove  (in libsystem_platform.dylib) + 0  [0x18ac1b360]
+    +   1788 llama_completion(int, char**)  (in libllama-completion-impl.dylib) + 684  [0x10208b2fc]
+    +   ! 1522 common_init_from_params(common_params&, bool)  (in libllama-common.0.0.9922.dylib) + 68  [0x1027d4170]
+    +   ! : 1330 common_init_result::common_init_result(common_params&, bool)  (in libllama-common.0.0.9922.dylib) + 392  [0x1027d2bd8]
+    +   ! : | 1330 llama_model_load_from_file  (in libllama.0.0.9922.dylib) + 204  [0x102bdff14]
+    +   ! : |   1215 llama_model_load_from_file_impl(gguf_context*, void (*)(ggml_tensor*, void*), void*, std::basic_string<char> const&, std::vector<std::basic_string<char>>&, __sFILE*, llama_model_params)  (in libllama.0.0.9922.dylib) + 3200  [0x102bdf864]
+    +   ! : |   + 1091 llama_model_base::load_tensors(llama_model_loader&)  (in libllama.0.0.9922.dylib) + 10268  [0x102c7fa20]
+    +   ! : |   + ! 1091 llama_model_loader::init_mappings(bool, std::vector<std::unique_ptr<llama_mlock>>*)  (in libllama.0.0.9922.dylib) + 392  [0x102c698fc]
+    +   ! : |   + !   1091 llama_mmap::llama_mmap(llama_file*, unsigned long, bool)  (in libllama.0.0.9922.dylib) + 64  [0x102c60228]
+    +   ! : |   + !     1091 llama_mmap::impl::impl(llama_file*, unsigned long, bool)  (in libllama.0.0.9922.dylib) + 164  [0x102c60d74]
+    +   ! : |   + !       1091 madvise  (in libsystem_kernel.dylib) + 8  [0x18abd09b0]

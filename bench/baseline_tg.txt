@@ -1,0 +1,5 @@
+build 80778baae, scalar I2_S kernel, -ngl 0, -r 3, Oct 9 2026
+| threads | test | t/s |
+| 1 | tg64 | 6.56 +/- 0.23 |
+| 2 | tg64 | 9.02 +/- 0.14 |
+| 4 | tg64 | 10.91 +/- 0.02 |

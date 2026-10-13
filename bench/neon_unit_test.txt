@@ -1,0 +1,14 @@
+date: 2026-10-12T18:32:54Z
+parent: bae6935, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'Battery Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: bash -c clang -O3 -mcpu=native+dotprod+i8mm scripts/test_i2s_neon.c -o /tmp/test_i2s_neon && /tmp/test_i2s_neon
+-----
+MATMUL_INT8 macro: yes
+OK: 6004 cases identical
+scalar: 1.121 ms per matrix, 3.9 GB/s of weights
+neon:   0.263 ms per matrix, 16.8 GB/s of weights (4.3x)
+checksum 1098800.000000

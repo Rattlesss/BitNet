@@ -1,0 +1,34 @@
+date: 2026-10-13T00:46:57Z
+parent: cdb5572, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'AC Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: ./build/bin/llama-bench -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf -p 0 -n 64 -t 1,2,3,4,6 -ngl 0 -r 5
+-----
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.012 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple A18 Pro)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       1 |            tg64 |         22.96 ± 0.95 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       2 |            tg64 |         30.57 ± 0.59 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       3 |            tg64 |         29.99 ± 0.05 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       4 |            tg64 |         36.05 ± 0.17 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       6 |            tg64 |         40.97 ± 0.81 |
+
+build: f332d6c74 (9924)

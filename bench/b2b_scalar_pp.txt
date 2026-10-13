@@ -1,0 +1,37 @@
+date: 2026-10-13T00:34:05Z
+parent: cdb5572, uncommitted files outside include/: 1
+submodule: 075d752fb, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'AC Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: ./build/bin/llama-bench -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf -p 64,128 -n 0 -t 1,2,4,6 -ngl 0 -b 64 -ub 16 -r 3
+-----
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.026 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple A18 Pro)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+| model                          |       size |     params | backend    | threads | n_batch | n_ubatch |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | ------: | -------: | --------------: | -------------------: |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       1 |      64 |       16 |            pp64 |          7.23 ± 0.14 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       1 |      64 |       16 |           pp128 |          6.61 ± 0.39 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       2 |      64 |       16 |            pp64 |         10.43 ± 0.01 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       2 |      64 |       16 |           pp128 |         10.44 ± 0.00 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       4 |      64 |       16 |            pp64 |         13.69 ± 0.02 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       4 |      64 |       16 |           pp128 |         13.69 ± 0.03 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       6 |      64 |       16 |            pp64 |         18.77 ± 0.12 |
+| bitnet-b1.58 2B Q1_0           |   1.42 GiB |     2.74 B | MTL,BLAS   |       6 |      64 |       16 |           pp128 |         18.74 ± 0.05 |
+
+build: 075d752fb (9923)
