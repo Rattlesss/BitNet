@@ -1,0 +1,10 @@
+date: 2026-10-13T00:17:24Z
+parent: a793a27, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'AC Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: bash -c ./build/bin/llama-eval-callback -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf -p "The capital of France is" -n 1 -t 1 -b 64 -ub 16 -ngl 0 > /tmp/eval.log 2>&1; grep -c "sum = nan" /tmp/eval.log
+-----
+0
