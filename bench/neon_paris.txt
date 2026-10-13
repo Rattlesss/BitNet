@@ -1,0 +1,34 @@
+date: 2026-10-13T00:17:05Z
+parent: 143d8a1, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'AC Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: ./build/bin/llama-completion -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf -p The capital of France is -n 20 --temp 0 -t 4 -ngl 0 -b 64 -ub 16 -no-cnv --override-kv tokenizer.ggml.pre=str:llama-bpe
+-----
+0.00.034.146 I llama_completion: llama backend init
+0.00.034.151 I llama_completion: load the model and apply lora adapter, if any
+0.01.541.105 I llama_completion: llama threadpool init, n_threads = 4
+0.01.541.148 I 
+0.01.541.185 I system_info: n_threads = 4 (n_threads_batch = 4) / 6 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.01.541.186 I 
+0.01.541.260 I sampler seed: 3522984142
+0.01.541.270 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+0.01.541.298 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+0.01.541.300 I generate: n_ctx = 4096, n_batch = 64, n_predict = 20, n_keep = 1
+0.01.541.300 I 
+The capital of France is Paris. Paris is a city that is known for its rich history, culture, and architecture. It
+
+0.02.224.725 I common_perf_print:    sampling time =       2.82 ms
+0.02.224.726 I common_perf_print:    samplers time =       1.47 ms /    26 tokens
+0.02.224.727 I common_perf_print:        load time =    1296.98 ms
+0.02.224.728 I common_perf_print: prompt eval time =     124.55 ms /     6 tokens (   20.76 ms per token,    48.17 tokens per second)
+0.02.224.729 I common_perf_print:        eval time =     555.46 ms /    19 runs   (   29.23 ms per token,    34.21 tokens per second)
+0.02.224.739 I common_perf_print:       total time =     683.62 ms /    25 tokens
+0.02.224.743 I common_perf_print: unaccounted time =       0.79 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)
+0.02.224.743 I common_perf_print:    graphs reused =         18
