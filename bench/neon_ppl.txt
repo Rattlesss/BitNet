@@ -1,0 +1,18 @@
+date: 2026-10-13T00:18:36Z
+parent: c019681, uncommitted files outside include/: 0
+submodule: f332d6c74, uncommitted files: 0
+chip: Apple A18 Pro
+power: Now drawing from 'AC Power'
+low power mode:  lowpowermode         0
+thermal: Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded 
+command: ./build/bin/llama-perplexity -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s-q8out.gguf -f /Users/rattles/Code/Bitnet/data/wikitext-2-raw/wiki.test.raw -c 512 -b 64 -ub 16 --chunks 20 -t 4 -ngl 0 --override-kv tokenizer.ggml.pre=str:llama-bpe
+-----
+0.01.642.752 I 
+0.01.642.870 I system_info: n_threads = 4 (n_threads_batch = 4) / 6 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.01.642.918 I perplexity: tokenizing the input ..
+0.01.729.914 I perplexity: tokenization took 87.005 ms
+0.01.729.992 I perplexity: calculating perplexity over 20 chunks, n_ctx=512, batch_size=64, n_seq=1
+0.12.123.402 I perplexity: 10.39 seconds per pass - ETA 3.45 minutes
+[1]9.4299,[2]11.2275,[3]13.0320,[4]13.4573,[5]13.5005,[6]14.0841,[7]14.7955,[8]15.3023,[9]16.1840,[10]16.2992,[11]16.4714,[12]16.9662,[13]17.8832,[14]17.3837,[15]17.2043,[16]16.7707,[17]16.6994,[18]17.1641,[19]17.0818,[20]16.7885,
+3.33.633.635 I Final estimate: PPL = 16.7885 +/- 0.70083
+
