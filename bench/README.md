@@ -12,3 +12,6 @@ Older files were made before record.sh and have no header. Their commands and bu
 - profile_scalar_2026-10-12.txt: the top-of-stack table and the madvise call stack from a macOS sample run, scalar kernel, submodule 075d752. profile_scalar_2026-10-12_raw.txt is the full report. The sample window overlapped the end of model loading, so madvise is load time.
 
 Power state was not recorded for any older file.
+
+- b2b_scalar_*.txt and b2b_neon_*.txt: the back-to-back session of 12 Oct 2026, plugged in, same model (ggml-model-i2_s-q8out.gguf), same flags for both sides. The scalar files were run with the submodule checked out at 075d752 (detached), so their header reports one uncommitted file outside include/, which is the submodule pointer; the NEON files were run at f332d6c74 (perf/neon-i2s). Commands are in each file header.
+- neon_tg6_recheck.txt: a third 6-thread NEON run (tg64, 5 repeats) to confirm the 6-thread number; 40.45 +/- 2.11 against 40.52 and 40.97 earlier.
