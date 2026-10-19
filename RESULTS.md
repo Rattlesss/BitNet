@@ -54,7 +54,7 @@ I set the direction, chose what to measure, ran every test, and required that no
 
 ## Reproduce
 
-Every result file in bench/ starts with a header recording the commit hashes, chip, power state and exact command; bench/README.md explains each file, including the older ones. The verified state is the neon-verified tag in both repos. The full setup from a clean machine has not been repeated yet; the steps are in my project notes and I will add them here once tested.
+Every result file in bench/ starts with a header recording the commit hashes, chip, power state and exact command; bench/README.md explains each file, including the older ones. The verified state is the neon-verified tag in both repos. The full setup from a clean machine has not been repeated yet, and the setup steps are not written up in this repo; ask me if you want to try it.
 
 ## Next
 
